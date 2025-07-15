@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopsmart_users_en/root_screen.dart';
 
 import 'constants/theme_data.dart';
 import 'providers/theme_provider.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
               context: context,
             ),
             debugShowCheckedModeBanner: false,
-            home: const HomeScreen(),
+            home: const RootScreen(),
           );
         },
       ),
