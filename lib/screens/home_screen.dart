@@ -1,4 +1,4 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               value: themeProvider.getIsDarkTheme,
               onChanged: (value) {
                 themeProvider.setDarkTheme(themeValue: value);
-                log("Theme state ${themeProvider.getIsDarkTheme}");
+                // log("Theme state ${themeProvider.getIsDarkTheme}");
               },
             ),
           ],
