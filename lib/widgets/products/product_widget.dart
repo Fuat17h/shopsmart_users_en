@@ -82,7 +82,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
-                          child: Icon(Icons.add_shopping_cart_outlined),
+                          child: Icon(
+                            Icons.add_shopping_cart_outlined,
+                            size: 20,
+                          ),
                         ),
                       ),
                     ),
