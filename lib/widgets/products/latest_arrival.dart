@@ -34,7 +34,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 5),
+              SizedBox(width: 8),
               Flexible(
                 child: Column(
                   children: [
@@ -44,6 +44,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
+                    SizedBox(height: 5),
                     FittedBox(
                       child: Row(
                         children: [
@@ -58,6 +59,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
                         ],
                       ),
                     ),
+                    SizedBox(height: 5),
                     FittedBox(
                       child: SubtitleTextWidget(
                         label: "1550.00\$",
