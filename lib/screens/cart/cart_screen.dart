@@ -3,6 +3,7 @@ import 'package:shopsmart_users_en/services/assets_manager.dart';
 import 'package:shopsmart_users_en/widgets/title_text.dart';
 
 import '../../widgets/empty_bag.dart';
+import 'bottom_checkout.dart';
 import 'cart_widget.dart';
 
 class CartScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class CartScreen extends StatelessWidget {
           ),
         )
         : Scaffold(
+          bottomSheet: CartBottomSheetWidget(),
           appBar: AppBar(
             leading: Padding(
               padding: const EdgeInsets.all(8.0),
