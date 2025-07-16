@@ -2,7 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:shopsmart_users_en/services/assets_manager.dart';
+import 'package:shopsmart_users_en/widgets/products/product_widget.dart';
 import 'package:shopsmart_users_en/widgets/title_text.dart';
+
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -46,6 +49,7 @@ class _SearchScreenState extends State<SearchScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              SizedBox(height: 15.0),
               TextField(
                 controller: searchTextController,
                 decoration: InputDecoration(
@@ -69,6 +73,18 @@ class _SearchScreenState extends State<SearchScreen> {
                     "value of the controller text is ${searchTextController.text}",
                   );
                 },
+              ),
+              SizedBox(height: 15.0),
+              Expanded(
+                child: DynamicHeightGridView(
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  builder: (context, index) {
+                    return ProductWidget();
+                  },
+                  itemCount: 200,
+                  crossAxisCount: 2,
+                ),
               ),
             ],
           ),
