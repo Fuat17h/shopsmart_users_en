@@ -23,117 +23,123 @@ class ProfileScreen extends StatelessWidget {
         ),
         title: AppNameTextWidget(fontSize: 20),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Visibility(
-            visible: false,
-            child: Padding(
-              padding: EdgeInsets.all(18.0),
-              child: TitlesTextWidget(
-                label: "Please Login to have unlimited access",
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Visibility(
+              visible: false,
+              child: Padding(
+                padding: EdgeInsets.all(18.0),
+                child: TitlesTextWidget(
+                  label: "Please Login to have unlimited access",
+                ),
               ),
             ),
-          ),
-          Visibility(
-            visible: true,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).cardColor,
-                      border: Border.all(
-                        color: Theme.of(context).colorScheme.primary,
-                        width: 3,
-                      ),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+            Visibility(
+              visible: true,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 5,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).cardColor,
+                        border: Border.all(
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 3,
                         ),
-                        fit: BoxFit.fill,
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
+                    SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TitlesTextWidget(label: "Fuat Hashim"),
+                        SizedBox(height: 6),
+                        SubtitleTextWidget(label: "fuad.yahya.2008@gmail.com"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Divider(thickness: 1),
+                  SizedBox(height: 10),
+                  TitlesTextWidget(label: "General"),
+                  SizedBox(height: 10),
+                  CustomListTile(
+                    text: "All Orders",
+                    imagePath: AssetsManager.orderSvg,
+                    function: () {},
                   ),
-                  SizedBox(width: 10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TitlesTextWidget(label: "Fuat Hashim"),
-                      SizedBox(height: 6),
-                      SubtitleTextWidget(label: "fuad.yahya.2008@gmail.com"),
-                    ],
+                  CustomListTile(
+                    text: "Wishlist",
+                    imagePath: AssetsManager.wishlistSvg,
+                    function: () {},
+                  ),
+                  CustomListTile(
+                    text: "Viewed recently",
+                    imagePath: AssetsManager.recent,
+                    function: () {},
+                  ),
+                  CustomListTile(
+                    text: "Address",
+                    imagePath: AssetsManager.address,
+                    function: () {},
+                  ),
+                  SizedBox(height: 6),
+                  Divider(thickness: 1),
+                  TitlesTextWidget(label: "Settings"),
+                  SizedBox(height: 6),
+                  SwitchListTile(
+                    secondary: Image.asset(AssetsManager.theme, height: 34),
+                    title: Text(
+                      themeProvider.getIsDarkTheme ? "Dark Mode" : "Light Mode",
+                    ),
+                    value: themeProvider.getIsDarkTheme,
+                    onChanged: (value) {
+                      themeProvider.setDarkTheme(themeValue: value);
+                    },
                   ),
                 ],
               ),
             ),
-          ),
-          SizedBox(height: 15),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Divider(thickness: 1),
-                SizedBox(height: 10),
-                TitlesTextWidget(label: "General"),
-                SizedBox(height: 10),
-                CustomListTile(
-                  text: "All Orders",
-                  imagePath: AssetsManager.orderSvg,
-                  function: () {},
-                ),
-                CustomListTile(
-                  text: "Wishlist",
-                  imagePath: AssetsManager.wishlistSvg,
-                  function: () {},
-                ),
-                CustomListTile(
-                  text: "Viewed recently",
-                  imagePath: AssetsManager.recent,
-                  function: () {},
-                ),
-                CustomListTile(
-                  text: "Address",
-                  imagePath: AssetsManager.address,
-                  function: () {},
-                ),
-                SizedBox(height: 6),
-                Divider(thickness: 1),
-                TitlesTextWidget(label: "Settings"),
-                SizedBox(height: 6),
-                SwitchListTile(
-                  secondary: Image.asset(AssetsManager.theme, height: 34),
-                  title: Text(
-                    themeProvider.getIsDarkTheme ? "Dark Mode" : "Light Mode",
+            Center(
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
-                  value: themeProvider.getIsDarkTheme,
-                  onChanged: (value) {
-                    themeProvider.setDarkTheme(themeValue: value);
-                  },
                 ),
-              ],
-            ),
-          ),
-          Center(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
+                onPressed: () {},
+                icon: Icon(Icons.login),
+                label: Text("Login"),
               ),
-              onPressed: () {},
-              icon: Icon(Icons.login),
-              label: Text("Login"),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -4,7 +4,6 @@ import 'package:shopsmart_users_en/root_screen.dart';
 
 import 'constants/theme_data.dart';
 import 'providers/theme_provider.dart';
-import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
