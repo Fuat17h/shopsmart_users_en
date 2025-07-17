@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopsmart_users_en/root_screen.dart';
+import 'package:shopsmart_users_en/screens/inner_screen/product_details.dart';
 
 import 'constants/theme_data.dart';
 import 'providers/theme_provider.dart';
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
             ),
             debugShowCheckedModeBanner: false,
             home: const RootScreen(),
+            routes: {
+              ProductDetailsScreen.routeName:
+                  (context) => ProductDetailsScreen(),
+            },
           );
         },
       ),

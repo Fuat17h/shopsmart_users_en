@@ -6,6 +6,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shopsmart_users_en/constants/app_constants.dart';
 import 'package:shopsmart_users_en/widgets/subtitle_text.dart';
 
+import '../../screens/inner_screen/product_details.dart';
+
 class LatestArrivalProductsWidget extends StatelessWidget {
   const LatestArrivalProductsWidget({super.key});
 
@@ -16,8 +18,8 @@ class LatestArrivalProductsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          log("ToDo add the navigation to the product details screen");
+        onTap: () async {
+          await Navigator.pushNamed(context, ProductDetailsScreen.routeName);
         },
         child: SizedBox(
           width: size.width * 0.45,
