@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shopsmart_users_en/constants/app_constants.dart';
 import 'package:shopsmart_users_en/screens/inner_screen/product_details.dart';
+import 'package:shopsmart_users_en/widgets/products/heart_btn.dart';
 import 'package:shopsmart_users_en/widgets/subtitle_text.dart';
 import 'package:shopsmart_users_en/widgets/title_text.dart';
 
@@ -49,13 +50,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       maxLines: 2,
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(IconlyLight.heart),
-                    ),
-                  ),
+                  Flexible(flex: 2, child: HeartButtonWidget()),
                 ],
               ),
             ),
